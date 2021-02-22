@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open Street Map</title>
+
+  <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" />
+  <style type="text/css">
+  		.content {
+  			padding: 50px 0;
+  		}
+
+  		.section-title {
+  			color: #777;
+  			font-size: 36px;
+  			font-weight: 600;
+  		}
+
+  		.street_info {
+  			width: 100%;
+  			height: 150px;
+  			color: #000;
+  			border: 3px solid #000;
+  			padding: 5px;
+  			margin: 15px 0;
+  		}
+
+  		.street_distance {
+  			font-size: 14px;
+  			font-weight: 600;
+  			text-align: right;
+  			margin-bottom: 60px;
+  		}
+
+  		.street_name {
+  			font-size: 16px;
+  			font-weight: 500;
+  			text-align: center;
+  		}
+
+  		.progress_bar {
+		  	text-align: center;
+		}
+
+		.progress_text {
+			color: blue;
+		  	font-weight: 500;
+		  	font-size: 16px;
+		  	text-align: center;
+		}
+
+  </style>
+</head>
+<body>
+	<div class="content">
+		<div class="container">
+			<h2 class="section-title">OPEN STREET MAP</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<div id="map" style="width: 100%; height: 400px;"></div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>latutude:</label>
+						<input type="number" class="form-control" id="latitude" name="latitude" value="" step="0.000001" />	
+					</div>
+					
+					<div class="form-group">
+						<label>radius(max:4.8km):</label>
+						<input type="number" class="form-control" id="radius" name="radius" value=""  max="4800" />	
+					</div>
+					
+					<div class="form-group">
+						<label>show cloest wayID only</label>
+						<input type="checkbox" id="cloest_way_id" name="cloest_way_id" value="1" />
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>longitude:</label>
+						<input type="number" class="form-control" id="longitude" name="longitude" value="" step="0.000001"/>	
+					</div>
+					<div class="form-group">
+						<label>maxrows:</label>
+						<input type="number" class="form-control" id="maxrows" name="maxrows" value="" />	
+					</div>
+					<div class="form-group">
+						<button type="button" class="btn btn-primary" id="get_info">Get Place</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress_bar"></div>
+					<div class="progress_text">Loading</div>
+				</div>
+			</div>
+			<hr /> 
+			<div class="row" id="street_contents"></div>
+		</div>
+	</div>
+</body>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzt3y7GiQpXRbK6jRTMWvlO-CRxCyyfZg&libraries=places&callback=initMap"async defe></script>-->
+<script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/jquery-ui.js"></script>
+
+<script src="./assets/script/google.js"></script>
+</html>
